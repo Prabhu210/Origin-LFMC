@@ -1,0 +1,231 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-03-26T07:16:35.961Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4392437100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Validate Origin Mapping functionality",
+        "description": "",
+        "id": "to-validate-origin-dashboard;validate-origin-mapping-functionality;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 156100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 422800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user launches the Origin Dashboard through Chrome Browser",
+            "match": {
+              "location": "StepDef.the_user_launches_the_Origin_Dashboard_through_Chrome_Browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6300346900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user clicks on Code Mapping and selects Testing company from the Dropdown option",
+            "match": {
+              "location": "StepDef.the_user_clicks_on_Code_Mapping_and_selects_Testing_company_from_the_Dropdown_option()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 901249800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Enter aa as \"AutomationTestmarch25\" and bb as \"1\" and cc as \"2\" and dd as \"10\"and ee as \"1000\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"AutomationTestmarch25\"",
+                  "offset": 12
+                },
+                {
+                  "val": "\"1\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"2\"",
+                  "offset": 60
+                },
+                {
+                  "val": "\"10\"",
+                  "offset": 74
+                },
+                {
+                  "val": "\"1000\"",
+                  "offset": 88
+                }
+              ],
+              "location": "StepDef.enter_aa_as_and_bb_as_and_cc_as_and_dd_as_and_ee_as(String,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 156133700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user clicks the Submit Button",
+            "match": {
+              "location": "StepDef.the_user_clicks_the_Submit_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 182062800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user should receive a mapping successful message",
+            "match": {
+              "location": "StepDef.the_user_should_receive_a_mapping_successful_message()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-03-26T07:16:47.939Z",
+        "before": [
+          {
+            "result": {
+              "duration": 49200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Validate Origin Demapping functionality",
+        "description": "",
+        "id": "to-validate-origin-dashboard;validate-origin-demapping-functionality",
+        "after": [
+          {
+            "result": {
+              "duration": 36500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 45400,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "the user launches the Origin Dashboard through Chrome Browser",
+            "match": {
+              "location": "StepDef.the_user_launches_the_Origin_Dashboard_through_Chrome_Browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5414112500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "the user clicks on the History module",
+            "match": {
+              "location": "StepDef.the_user_clicks_on_the_History_module()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6253279400,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "the user validates whether the mapping has occurred or not",
+            "match": {
+              "location": "StepDef.the_user_validates_whether_the_mapping_has_occurred_or_not()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5142178400,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the user performs demapping",
+            "match": {
+              "location": "StepDef.the_user_performs_demapping()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 139666700,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "the user should receive a demapping successful message",
+            "match": {
+              "location": "StepDef.the_user_should_receive_a_demapping_successful_message()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression"
+          }
+        ]
+      }
+    ],
+    "name": "To validate Origin DashBoard",
+    "description": "",
+    "id": "to-validate-origin-dashboard",
+    "keyword": "Feature",
+    "uri": "file:/C:/Users/Acviss/eclipse-workspace/Acviss/Feature/Dashboard.feature",
+    "tags": []
+  }
+]
