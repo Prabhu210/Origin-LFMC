@@ -15,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -43,8 +44,11 @@ public class Baseclass {
 	
 	public static void browserconfig() 
 	{
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		ChromeOptions options=new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+	     options.addArguments("headless");
+		driver=new ChromeDriver(options);
 	}
 	public static void launchbrowser(String url)
 	{

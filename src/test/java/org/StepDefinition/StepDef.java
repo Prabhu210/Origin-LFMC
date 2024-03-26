@@ -88,39 +88,67 @@ public class StepDef extends Baseclass {
 			driver.findElement(By.xpath("//div[@class ='close']/child::*")).click();
 		    driver.findElement(By.xpath("//span[text()='History']")).click();
 		    driver.findElement(By.xpath("//button[text()='Get History Data']")).click();
-		    Thread.sleep(5000);
+		   Thread.sleep(5000);
 		    
 		}
 
 		@When("the user validates whether the mapping has occurred or not")
 		public void the_user_validates_whether_the_mapping_has_occurred_or_not() throws AWTException, InterruptedException {
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			// Find and click the button
+			WebElement button = driver.findElement(By.xpath("(//div[@class='container']/descendant::div)[11]/child::*/child::button[1]"));
+			// Scroll to the button
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()",button);
+
+			// Click the butto
+
+
+			// Wait for the overlay to disappear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("MuiBackdrop-root")));
+
+			// Now, find the input element and perform actions on it
+			WebElement searchInput = driver.findElement(By.xpath("//input[@placeholder='Search']"));
+			searchInput.sendKeys("AutomationTestmarch25");
+
+			// Wait for the search results to appear
+			WebElement searchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[text()='AutomationTestmarch25']")));
+			String text = searchResult.getText();
+			System.out.println(text);
+			Assert.assertEquals(text, "AutomationTestmarch25");
+
 			
 			
-			
-		Robot r=new Robot();
-		Thread.sleep(3000);
-		r.keyPress(KeyEvent.VK_TAB);
-			r.keyRelease(KeyEvent.VK_TAB);
-			r.keyPress(KeyEvent.VK_ENTER);
-			r.keyRelease(KeyEvent.VK_ENTER);
-			r.keyPress(KeyEvent.VK_ENTER);
-			r.keyRelease(KeyEvent.VK_ENTER);
-			
-			Thread.sleep(3000);
-			    driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("AutomationTestmarch25");
-			
-			    WebElement element = driver.findElement(By.xpath("//td[text()='AutomationTestmarch25']"));
-			    String text = element.getText();
-			    System.out.println(text);
-			    Assert.assertEquals(text,"AutomationTestmarch25");
-			    
-			//a.click();
-			
-//			Robot r=new Robot();
-//			r.keyPress(KeyEvent.VK_ENTER);
-			
-			
-			
+//		Robot r=new Robot();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		driver.findElement(By.xpath("(//div[@class='container']/descendant::div)[11]/child::*/child::button[1]")).click();
+////		r.keyPress(KeyEvent.VK_TAB);
+////			r.keyRelease(KeyEvent.VK_TAB);
+////			r.keyPress(KeyEvent.VK_ENTER);
+////			r.keyRelease(KeyEvent.VK_ENTER);
+////			r.keyPress(KeyEvent.VK_ENTER);
+////			r.keyRelease(KeyEvent.VK_ENTER);
+//			
+//			Thread.sleep(5000);
+//			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+//			WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Search']")));
+//			until.sendKeys("AutomationTestmarch25");
+//			    //driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("AutomationTestmarch25");
+//			
+////			  
+//			WebElement element = driver.findElement(By.xpath("//td[text()='AutomationTestmarch25']"));
+//			    String text = element.getText();
+//			    System.out.println(text);
+//			    Assert.assertEquals(text,"AutomationTestmarch25");
+//			    
+//			//a.click();
+//			
+////			Robot r=new Robot();
+////			r.keyPress(KeyEvent.VK_ENTER);
+//			
+//			
+//			
 		}
 
 		
