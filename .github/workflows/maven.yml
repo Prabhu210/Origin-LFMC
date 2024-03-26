@@ -1,10 +1,10 @@
-name: Java CI with Maven
+name: Cucumber CI/CD
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,14 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
         java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+
     - name: Build with Maven
-      run: mvn -B package --file pom.xml || echo "::error::Build failed"
+      run: mvn clean install
+
     - name: Run Cucumber Tests
       run: mvn test
